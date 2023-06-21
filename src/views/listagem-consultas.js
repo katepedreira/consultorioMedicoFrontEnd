@@ -81,8 +81,11 @@ function ListagemConsultas() {
                     <th scope='col'>ID Consulta</th>
                     <th scope='col'>Data</th>
                     <th scope='col'>ID Paciente</th>
+                    <th scope='col'>Nome Paciente</th>
                     <th scope='col'>ID Médico</th>
+                    <th scope='col'>Nome Médico</th>
                     <th scope='col'>ID Procedimento</th>
+                    <th scope='col'>Nome Procedimento</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -91,8 +94,11 @@ function ListagemConsultas() {
                     <td>{dado.id}</td>
                     <td>{dado.data}</td>
                       <td>{dado.idPaciente}</td>
+                      <td>{dado.nomePaciente}</td>
                       <td>{dado.idMedico}</td>
+                      <td>{dado.nomeMedico}</td>
                       <td>{dado.idProcedimento}</td>
+                      <td>{dado.nomeProcedimento}</td>
                       <td>
                         <Stack spacing={1} padding={0} direction='row'>
                           <IconButton

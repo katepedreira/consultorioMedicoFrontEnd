@@ -45,11 +45,11 @@ function CadastroConsulta() {
   }
 
   async function salvar() {
-    let data = { id, data, idPaciente, idMedico, IdProcedimento};
-    data = JSON.stringify(data);
+    let dados = { id, data, idPaciente, idMedico, IdProcedimento};
+    dados = JSON.stringify(data);
     if (idParam == null) {
       await axios
-        .post(baseURL, data, {
+        .post(baseURL, dados, {
           headers: { 'Content-Type': 'application/json' },
         })
         .then(function (response) {
