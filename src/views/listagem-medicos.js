@@ -78,6 +78,7 @@ function ListagemMedicos() {
               <table className='table table-hover'>
                 <thead>
                   <tr>
+                  <th scope='col'>ID</th>
                     <th scope='col'>Nome</th>
                     <th scope='col'>CRM</th>
                     <th scope='col'>CPF</th>
@@ -87,6 +88,7 @@ function ListagemMedicos() {
                 <tbody>
                   {dados.map((dado) => (
                     <tr key={dado.id}>
+                      <td>{dado.id}</td>
                       <td>{dado.nome}</td>
                       <td>{dado.crm}</td>
                       <td>{dado.cpf}</td>

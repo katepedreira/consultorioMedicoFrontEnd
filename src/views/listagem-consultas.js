@@ -79,7 +79,7 @@ function ListagemConsultas() {
                 <thead>
                   <tr>
                     <th scope='col'>ID Consulta</th>
-                    <th scope='col'>Data</th>
+                    <th scope='col'>Data Consulta</th>
                     <th scope='col'>ID Paciente</th>
                     <th scope='col'>Nome Paciente</th>
                     <th scope='col'>ID Médico</th>
@@ -92,7 +92,7 @@ function ListagemConsultas() {
                   {dados.map((dado) => (
                     <tr key={dado.id}>
                     <td>{dado.id}</td>
-                    <td>{dado.data}</td>
+                    <td>{dado.dataConsulta}</td>
                       <td>{dado.idPaciente}</td>
                       <td>{dado.nomePaciente}</td>
                       <td>{dado.idMedico}</td>

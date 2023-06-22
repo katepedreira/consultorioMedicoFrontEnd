@@ -24,7 +24,7 @@ function CadastroSecretaria() {
   const [nome, setNome] = useState('');
   const [cpf, setCpf] = useState('');
   const [dataNascimento, setDataNascimento] = useState('');
-  const [IdEndereco, setIdEndereco] = useState(0);
+  const [idEndereco, setIdEndereco] = useState('');
 
   const [dados, setDados] = React.useState([]);
 
@@ -34,18 +34,18 @@ function CadastroSecretaria() {
       setNome('');
       setCpf('');
       setDataNascimento('');
-      setIdEndereco(0);
+      setIdEndereco('');
     } else {
       setId(dados.id);
       setNome(dados.nome);
       setCpf(dados.cpf);
       setDataNascimento(dados.dataNascimento);
-      setIdEndereco(dados.IdEndereco);
+      setIdEndereco(dados.idEndereco);
     }
   }
 
   async function salvar() {
-    let data = { id, nome, cpf, dataNascimento, IdEndereco };
+    let data = { id, nome, cpf, dataNascimento, idEndereco };
     data = JSON.stringify(data);
     if (idParam == null) {
       await axios
@@ -83,7 +83,7 @@ function CadastroSecretaria() {
       setNome(dados.nome);
       setCpf(dados.cpf);
       setDataNascimento(dados.dataNascimento);
-      setIdEndereco(dados.IdEndereco);
+      setIdEndereco(dados.idEndereco);
     }
   }
 
@@ -140,9 +140,9 @@ function CadastroSecretaria() {
                 <input
                   type='text'
                   id='inputEndereco'
-                  value={IdEndereco}
+                  value={idEndereco}
                   className='form-control'
-                  name='IdEndereco'
+                  name='idEndereco'
                   onChange={(e) => setIdEndereco(e.target.value)}
                 />
               </FormGroup>

@@ -25,7 +25,7 @@ function CadastroMedico() {
   const [crm, setCrm] = useState('');
   const [cpf, setCpf] = useState('');
   const [dataNascimento, setDataNascimento] = useState('');
-  const [IdEndereco, setIdEndereco] = useState(0);
+  const [IdEndereco, setIdEndereco] = useState('');
 
   const [dados, setDados] = React.useState([]);
 
@@ -36,7 +36,7 @@ function CadastroMedico() {
       setCrm('');
       setCpf('');
       setDataNascimento('');
-      setIdEndereco(0);
+      setIdEndereco('');
     } else {
       setId(dados.id);
       setNome(dados.nome);

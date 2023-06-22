@@ -21,35 +21,35 @@ function CadastroConsulta() {
   const baseURL = `${BASE_URL}/consultas`;
 
   const [id, setId] = useState('');
-  const [data, setData] = useState('');
-  const [idPaciente, setIdPaciente] = useState(0);
-  const [idMedico, setIdMedico] = useState(0);
-  const [IdProcedimento, setIdProcedimento] = useState(0);
+  const [dataConsulta, setDataConsulta] = useState('');
+  const [idPaciente, setIdPaciente] = useState('');
+  const [idMedico, setIdMedico] = useState('');
+  const [idProcedimento, setIdProcedimento] = useState('');
 
   const [dados, setDados] = React.useState([]);
 
   function inicializar() {
     if (idParam == null) {
       setId('');
-      setData('');
+      setDataConsulta('');
       setIdPaciente('');
       setIdMedico('');
-      setIdProcedimento(0);
+      setIdProcedimento('');
     } else {
       setId(dados.id);
-      setData(dados.data);
+      setDataConsulta(dados.dataConsulta);
       setIdPaciente(dados.idPaciente);
       setIdMedico(dados.idMedico);
-      setIdProcedimento(dados.IdProcedimento);
+      setIdProcedimento(dados.idProcedimento);
     }
   }
 
   async function salvar() {
-    let dados = { id, data, idPaciente, idMedico, IdProcedimento};
-    dados = JSON.stringify(data);
+    let data = { id, dataConsulta, idPaciente, idMedico, idProcedimento };
+    data = JSON.stringify(data);
     if (idParam == null) {
       await axios
-        .post(baseURL, dados, {
+        .post(baseURL, data, {
           headers: { 'Content-Type': 'application/json' },
         })
         .then(function (response) {
@@ -80,10 +80,10 @@ function CadastroConsulta() {
         setDados(response.data);
       });
       setId(dados.id);
-      setData(dados.data);
+      setDataConsulta(dados.dataConsulta);
       setIdPaciente(dados.idPaciente);
       setIdMedico(dados.idMedico);
-      setIdProcedimento(dados.IdProcedimento);     
+      setIdProcedimento(dados.idProcedimento);
     }
   }
 
@@ -105,14 +105,14 @@ function CadastroConsulta() {
         <div className='row'>
           <div className='col-lg-12'>
             <div className='bs-component'>
-              <FormGroup label='Data: *' htmlFor='inputData'>
+              <FormGroup label='Data: *' htmlFor='inputDataConsulta'>
                 <input
                   type='date'
                   id='inputData'
-                  value={data}
+                  value={dataConsulta}
                   className='form-control'
-                  name='data'
-                  onChange={(e) => setData(e.target.value)}
+                  name='dataConsulta'
+                  onChange={(e) => setDataConsulta(e.target.value)}
                 />
               </FormGroup>
               <FormGroup label='ID Paciente: *' htmlFor='inputIdPaciente'>
@@ -139,7 +139,7 @@ function CadastroConsulta() {
                 <input
                   type='number'
                   id='inputIdProcedimento'
-                  value={IdProcedimento}
+                  value={idProcedimento}
                   className='form-control'
                   name='idProcedimento'
                   onChange={(e) => setIdProcedimento(e.target.value)}
